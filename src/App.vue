@@ -49,7 +49,7 @@ export default {
     apexchart: VueApexCharts,
   },
   created() {
-      this.connection = new WebSocket("ws://city-ws.herokuapp.com");
+      this.connection = new WebSocket("wss://city-ws.herokuapp.com");
       this.connection.onopen = function(event){
         console.log(event);
       }
