@@ -18,35 +18,17 @@
       <md-dialog-title>Details</md-dialog-title>
         <div id="chart-timeline">
           <div class="toolbar">
-            
-            <button id="30_seconds"
-                @click="updateData('30_seconds')" :class="{active: selection==='30_seconds'}"
-                >
-              30s
-            </button>
-            <button id="one_min"
-                @click="updateData('one_min')" :class="{active: selection==='one_min'}"
-                >
-              1M
-            </button>
-            <button id="5_mins"
-                @click="updateData('5_mins')" :class="{active: selection==='5_mins'}"
-                >
-              5M
-            </button>
-            
-            
-            <button id="10_mins"
-                
-                @click="updateData('10_mins')" :class="{active: selection==='10_mins'}"
-                >
-              10M
-            </button>
-            <button id="all"
-                @click="updateData('all')" :class="{active: selection==='all'}"
-                >
-              ALL
-            </button>
+          
+            <md-button class="md-raised " id="30_seconds"
+                @click="updateData('30_seconds')" :class="{'md-primary': selection==='30_seconds'}">30s</md-button>
+            <md-button class="md-raised" id="one_min"
+                @click="updateData('one_min')" :class="{'md-primary': selection==='one_min'}">1M</md-button>
+            <md-button class="md-raised" id="5_mins"
+                @click="updateData('5_mins')" :class="{'md-primary': selection==='5_mins'}">5M</md-button>
+            <md-button class="md-raised" id="10_mins"
+                @click="updateData('10_mins')" :class="{'md-primary': selection==='10_mins'}">10M</md-button>
+            <md-button class="md-raised"  id="all"
+                @click="updateData('all')" :class="{'md-primary': selection==='all'}">ALL</md-button>
           </div>
           <apexchart type="area" height="350" ref="chart" :options="chartOptions" :series="series"></apexchart>
         </div>
@@ -219,5 +201,8 @@ export default {
 }
 .md-dialog-container{
   width: 70vw;
+}
+.md-table-row{
+  cursor: pointer;
 }
 </style>
